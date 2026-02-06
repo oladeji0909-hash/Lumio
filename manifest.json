@@ -2,7 +2,7 @@
   "name": "Lumio",
   "short_name": "Lumio",
   "description": "Lumio — a privacy‑minded, multi‑persona AI assistant with local encryption.",
-  "start_url": "assistant.html",
+  "start_url": ".",
   "scope": ".",
   "display": "standalone",
   "background_color": "#0b0f14",

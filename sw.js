@@ -1,9 +1,10 @@
 // Simple PWA service worker for AI Assistant
 // Caches the app shell for offline usage and improves reliability.
 
-const CACHE = 'assistant-cache-v1';
+const CACHE = 'assistant-cache-v2';
 const CORE = [
   './',
+  './index.html',
   './assistant.html',
   './manifest.json'
 ];
@@ -34,10 +35,10 @@ self.addEventListener('fetch', (event) => {
       fetch(req)
         .then((res) => {
           const clone = res.clone();
-          caches.open(CACHE).then((cache) => cache.put('./assistant.html', clone));
+          caches.open(CACHE).then((cache) => cache.put('./index.html', clone));
           return res;
         })
-        .catch(() => caches.match('./assistant.html'))
+        .catch(() => caches.match('./index.html'))
     );
     return;
   }
